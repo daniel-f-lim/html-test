@@ -1,0 +1,7 @@
+browser-sync start --server --directory --files "**/*"
+
+git status
+git checkout ... (branch name)
+git add ...
+git commit -m "..."
+git push

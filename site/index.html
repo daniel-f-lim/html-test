@@ -1,9 +1,236 @@
 <html>
 	<head>
+		<meta charset='utf-8'>
 		<title>Test</title>
+		<link rel="stylesheet" href="style.css">
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			li {
+				list-style: none;
+			}
+			li a:link, a:visited {
+				text-decoration: none;
+				background-color: green;
+				border: 1px solid blue;
+				color: black;
+				display: block;
+				width: 200px;
+				text-align: center;
+				margin-bottom: 1px;
+			}
+			li a:hover, a:active {
+				background-color: red;
+				color: purple;
+				cursor: pointer;
+			}
+			ul li:nth-child(2) {
+				font-size: 24px;
+			}
+			p.floating {
+				color: blue;
+				font-size: 13px;
+				width: 50px;
+				height: 50px;
+				border: 1px solid black;
+			}
+			h1 {
+				color: green;
+				font-size: 30px;
+				text-align: center;
+			}
+			h2 {
+				text-align: center;
+				font-weight: bold;
+				font-style: italic;
+				background-color: purple;
+				opacity: 0.5;
+			}
+			span, .red {
+				color: red;
+			}
+			#name {
+				color: yellow;
+			}
+			#box {
+				background-color: blue;
+				padding: 10px;
+				border: 3px solid black;
+				margin: 40px;
+				width: 300px;
+				height: 100px;
+				overflow: auto;
+				box-sizing: border-box; <!-- unnecessary because of * selector -->
+			}
+			#content {
+				background-color: #90EE90;
+			}
+			#bg {
+				width: 500px;
+				height: 250px;
+				background-color: blue;
+				background-image: url("http://www.bandofcats.com/wp-content/uploads/2011/08/funny-cats_154.jpg");
+				background-repeat: no-repeat;
+				background-position: top right;
+			}
+			#p1 {
+				background-color: #A52A2A;
+				float: right;
+			}
+			#p2 {
+				background-color: #DEB887;
+				clear: right; <!-- skip passed any elements floating to the right of this block -->
+			}
+			#p3 {
+				background-color: #5F9EA0;
+			}
+			#p4 {
+				background-color: #FF7F50;
+			}
+		</style>
 	</head>
 
 	<body>
 		<h1>Hello World!</h1>
+
+		<h2>Traditional Content Models</h2>
+		<ol>
+			<li>Block-Level: rendered on new lines</li>
+			<li>Inline: render on the same line (can only contain other inline elements)</li>
+		</ol>
+
+		<h2 class='red'>HTML5 Content Models</h2>
+		<ol>
+			<li>Flow: roughly corresponds to block-level (e.g. DIV)</li>
+			<li>Phrasing: rougly corresponds to inline (e.g. SPAN)</li>
+		</ol>
+
+		<div>DIV 1: some content here</div>
+		<div>DIV 2: following after div 1</div>
+		<span>SPAN 1: following after div 2</span>
+		<span>SPAN 2: following after span 1</span>
+		<div>DIV 3: following span 1
+			<span>SPAN 3: inside div 3</span>
+			Continue with div 3 content
+		</div>
+
+	<h2>Semantic Tags</h2>
+	<p>Just like DIV tags, since they are generic block-level tags, but they signify meaningful divisions and can be picked up by SEO.</p>
+	H1,H2, ... ,H6: signify importance of summarizing content
+	<header>
+	HEADER: summarizes entire content (e.g. logo)
+	NAV:
+	</header>
+	<section>
+		<article>SECTION:</article> 
+		<article>ARTICLE:</article>
+	</section>
+	<aside>
+	ASIDE: related to main content, but not directly
+	</aside>
+	<footer id='name'>
+	FOOTER: copyright?
+	</footer>
+
+	<h2 id='name'>Character Entity References</h2>
+	&lt;, &gt;, &amp;, &copy;, &quot;: these characters are not treated as HTML
+
+	<h2 class='red'>CSS styling</h2>
+	<a href="http://csszengarden.com" target="_new">CSS Zen Garden</a> demonstrates the power of separating content from form! There are 200+ differnt web designs of the SAME HTML code - all that is manipulated is the CSS.
+
+	<p style="text-align: center">CSS rules can be put into the HTML file itself within STYLE tags inside the HEAD tag.</p>
+
+	<p>Pseudo-class selectors help control user behavior responses - :link, :visited, :hover, :active, :nth-child(...)</p>
+
+	Often we turn UL tags into menus using these pseudo-selectors.
+
+	<ul>
+		<li><a href=''>Home</a></li>
+		<li><a href=''>About Us</a></li>
+		<li><a href=''>Contact</a></li>
+	</ul>
+
+	<strong>Conflict Resolution</strong>:
+
+	<ol>
+		<li>last declaration wins when sequentially processed</li>
+		<li>declarations merge</li>
+		<li>inheritance of attributes</li>
+		<li>most specific selector wins (inline style, ID, class, number of selector tags)</li>
+	</ol>
+
+	<h2>The Box Model</h2>
+
+	<div id="box">
+		<div id="content">Duke Kunshan University is a joint venture between Duke University (U.S.) and Wuhan University (China). If we set the height of this box to be 100px the 'overflow' will spill out, but we can set this attribute to that it stops being visible. Setting it to 'visible', 'hidden', 'auto' (if need scrollbars), and 'scroll' (scrollbars whether they are needed or not).
+		</div>
+	</div>
+
+	<div>
+	Notice that the default box model does not dynamically change the width of the content of a box when the borders and padding change. So a width of 300px along with padding of 10px and border of 1px will really have a total width of 322px. But if you set the <strong>box-sizing</strong> attribute to <strong>border-box</strong> (not content-box) then the width of 300px specifies the total width of content, padding, and border.
+	</div>
+
+	<div>
+	The box-sixing attribute cannot be inherited, so we can use the <strong>*</strong> selector to use the rule for all selectors.
+	</div>
+
+	<div>
+	Margins that are horizontal are cumulative, but the margins that are vertical collapse into the larger margin.
+	</div>
+
+	<h2>The Background Property</h2>
+
+	<div id="bg">
+	Here is some filler text just so we can test the background properties that are available.
+	</div>
+
+	<h2>Floating Elements</h2>
+
+	<div style="background: #00FFFF">
+		<p id="p1" class="floating"></p>
+		<p id="p2" class="floating"></p>
+		<p id="p3" class="floating"></p>
+		<p id="p4" class="floating"></p>
+		<section>This is a regular content continuing after the paragraph boxes.</section>
+	</div>
+
+	<div style="width: 50%; float: left; background: #DDDDDD; border: 1px solid black; padding: 5px">
+	Here is some filler text just so we can test the background properties that are available.
+	</div>
+	<div style="width: 50%; float: left; padding: 5px">
+	Here is some filler text just so we can test the background properties that are available.
+	</div>
+
+	<div style="clear: both"></div>
+
+	<h2>Relative / Absolute Positions</h2>
+
+	<div style="background: #00FFFF">
+	<p style="height: 50px; width: 50px; background: red; position: relative; top: 65px; left: 65px">
+	<p style="height: 50px; width: 50px; background: blue; position: relative">
+	</div>
+
+	<h2>Media Queries</h2>
+
+	@media (min-width: 700px) {
+		traditional CSS rules...
+	}
+
+	<p>This allows us to make <strong>responsive designs</strong>. Nowadays these designs are based on the 12-Column Grid Responsive Layout (3x3x3x3, 4x4x4, 6x6).</p>
+
+	<p style="width: 90%; margin-right: auto; margin-left: auto">
+	This is a trick to set a percentage width that remains <strong>centered</strong>! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent augue lectus, porttitor ut gravida vitae, dignissim eget tortor. Quisque non leo sed dolor venenatis hendrerit eget pretium ipsum. Aenean pulvinar magna vitae lectus faucibus, ut hendrerit erat luctus. Nam non eros et elit imperdiet elementum. Donec non quam at nulla blandit scelerisque non non massa. Suspendisse et scelerisque mauris. Quisque in pharetra leo, et porta orci.
+	</p>
+
+	<p>We can handle different media sizes with @media commands that define different sets of column sizes, then use these as classes for DIV tags, but only the classes defined through the @media commands will be available!</p>
+
+	<div class='row'>
+		<div class='col-lg-3 col-md-6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent augue lectus, porttitor ut gravida vitae, dignissim eget tortor. Quisque non leo sed dolor venenatis hendrerit eget pretium ipsum. Aenean pulvinar magna vitae lectus faucibus, ut hendrerit erat luctus. Nam non eros et elit imperdiet elementum. Donec non quam at nulla blandit scelerisque non non massa. Suspendisse et scelerisque mauris. Quisque in pharetra leo, et porta orci.</div>
+
+		<a href="test.html">CSS Media Test</a>
+
+	</div>
+
 	</body>
 </html>
