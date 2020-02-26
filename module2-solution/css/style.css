@@ -5,6 +5,7 @@ h1 {
 
 * {
 	box-sizing: border-box;
+	font-family: Roboto, Arial;
 }
 
 .blurb {
