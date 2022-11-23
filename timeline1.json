@@ -1,0 +1,31 @@
+{
+	"title": {
+		"text": {
+			"headline": "Elisabeth-Descartes Correspondence",
+			"text": "<p>The little known correspondences...</p>"
+		},
+		"media": {
+			"url": "",
+			"caption": "A captivating picture of the princess",
+			"credit": "Royal Museums Greenwich"
+		}
+	},
+	"events": [
+		{
+			"media": {
+				"url": "",
+				"caption": "Houston's mother and Gospel singer.",
+				"credit": "Dionne Warwick: CBS Television via Wikimedia Commons"
+			},
+			"start_date": {
+				"month": "8",
+				"day": "9",
+				"year": "2020"
+			},
+			"text": {
+				"headline": "First Event",
+				"text": "<p>lorem ipsum</p>"
+			}
+		}
+	]
+}
