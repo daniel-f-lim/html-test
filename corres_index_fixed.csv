@@ -1,4 +1,4 @@
-,connection_type,correspondent,date,reformatted_date,from,to,location,full_text,source,index_shapiro_themes,index_shapiro_people,index_shapiro_texts,uuid
+row,connection_type,correspondent,date,reformatted_date,from,to,location,full_text,source,index_shapiro_themes,index_shapiro_people,index_shapiro_texts,uuid
 0,correspondence,"Barclay, Robert",['04/24/1676'],"24 April, 1676","Barclay, Robert",Princess Elisabeth,['London'],Y,['Shapiro 186-8'],[],"['Barclay, David']",[],59653e84-9774-411e-9459-3bc554edbf66
 1,correspondence,"Barclay, Robert","['07/21/1676', '07/31/1676']","21/31 July, 1676",Princess Elisabeth,"Barclay, Robert",['Herford'],Y,"['Webb 327-8', 'Hodgkin 256-7', 'Shapiro 188-9']",['Aberdeen Prison'],"['Barclay, David', 'Furly, Benjamin']",[],2aa4561a-907b-41dd-ad97-5d3e2ad79c1f
 2,correspondence,"Barclay, Robert",['09/06/1676'],"Sep. 6, 1676","Barclay, Robert",Princess Elisabeth,['Edinburgh'],Y,['Shapiro 189-90'],['Aberdeen Prison'],"['Barclay, David']",[],f4828eed-528c-45e9-83bc-8ea749f1fe47
